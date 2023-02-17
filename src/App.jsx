@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { fetchSynonyms } from '../api/synonyms';
 
 function App() {
   const [word, setWord] = useState('');
@@ -11,22 +12,27 @@ function App() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    fetchSynonyms(word).then(setSynonyms);
     // get only results with more than 1000 points;
-    fetch(`https://api.datamuse.com/words?rel_syn=${word}`).then(resp => resp.json()).then(resp => setSynonyms(resp.filter(synonym => synonym.score > 1000)));
+  }
+
+  const handleClickList = (wordClicked) => {
+    fetchSynonyms(wordClicked).then(setSynonyms);
+    setWord(wordClicked);
   }
 
   return (
     <div className="App">
       <form onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="wordInput">Enter your word</label>
-        <input id="wordInput" type="text" onChange={(e) => handleWordChange(e)}/>
+        <input value={word} id="wordInput" type="text" onChange={(e) => handleWordChange(e)}/>
         <input type="submit" value="GO"/>
       </form>
       <hr/>
       <div id="synonymsWords">
         <h3>The synonyms for {word} are: </h3>
         <ul>{synonyms.map(synonym => 
-          <li key={synonym.word}>{synonym.word}</li>
+          <li key={synonym.word} onClick={() => handleClickList(synonym.word)}>{synonym.word}</li>
         )}</ul>
       </div>
     </div>
