@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
@@ -19,12 +18,16 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <label for="wordInput">Enter your word</label>
+        <label htmlFor="wordInput">Enter your word</label>
         <input id="wordInput" type="text" onChange={(e) => handleWordChange(e)}/>
         <input type="submit" value="GO"/>
       </form>
-      <div id="words">
-        {word}  
+      <hr/>
+      <div id="synonymsWords">
+        <h3>The synonyms for {word} are: </h3>
+        <ul>{synonyms.map(synonym => 
+          <li key={synonym.word}>{synonym.word}</li>
+        )}</ul>
       </div>
     </div>
   )

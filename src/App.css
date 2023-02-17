@@ -19,3 +19,12 @@ input[type=submit]{
   width: 100px;
 }
 
+li{
+  text-align: left;
+}
+
+li:hover{
+  border:dashed lightgray 1px;
+  background-color:rgb(51, 53, 53);
+}
+
