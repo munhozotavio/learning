@@ -5,19 +5,24 @@ import { fetchSynonyms } from '../api/synonyms';
 function App() {
   const [word, setWord] = useState('');
   const [synonyms, setSynonyms] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleWordChange = e => {
     setWord(e.target.value);
   };
 
+  const getSynonyms = (text) => {
+    setIsLoading(true);
+    fetchSynonyms(text).then(setSynonyms).then(() => setIsLoading(false));
+  }
+
   const handleSubmit = e => {
     e.preventDefault();
-    fetchSynonyms(word).then(setSynonyms);
-    // get only results with more than 1000 points;
+    getSynonyms(word);
   }
 
   const handleClickList = (wordClicked) => {
-    fetchSynonyms(wordClicked).then(setSynonyms);
+    getSynonyms(wordClicked);
     setWord(wordClicked);
   }
 
@@ -31,9 +36,9 @@ function App() {
       <hr/>
       <div id="synonymsWords">
         <h3>The synonyms for {word} are: </h3>
-        <ul>{synonyms.map(synonym => 
+        <ul>{isLoading ? "Loading..." : synonyms.length > 0 ? synonyms.map(synonym => 
           <li key={synonym.word} onClick={() => handleClickList(synonym.word)}>{synonym.word}</li>
-        )}</ul>
+        ) : "There are no synonyms for this word =("}</ul>
       </div>
     </div>
   )
