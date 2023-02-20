@@ -1,4 +1,4 @@
 # learning
 An repository to learn react
 
-Each branch is a different challenge solved or a new technique learned
+<a href="https://reactchallenges.live/challenge/2">Challenge 2 from reactchallenges.live</a>
