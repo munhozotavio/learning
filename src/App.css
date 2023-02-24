@@ -40,3 +40,24 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.progressContainer{
+  background-color: grey;
+  width: 200px;
+  border-radius: 20px;
+}
+
+input{
+  margin-left: 5px;
+  width: 50px;
+}
+
+.progressContent{
+  border: 5px;
+  background-color: orange;
+  border-style: dashed;
+  border-color: black;
+  border-radius: 20px;
+  width: 30%; 
+}
