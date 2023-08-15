@@ -1,0 +1,9 @@
+a:hover{
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+.hidden:hover{
+  cursor:default;
+  background-color: white;
+}

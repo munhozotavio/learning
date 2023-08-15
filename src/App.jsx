@@ -28,8 +28,8 @@ const root = [
     },
     {
       name:"code2.html",
-      type:"file",
-      content: "esse é um html (2)",
+      type:"folder",
+      files: [],
     }]
   },
 ]
@@ -37,11 +37,7 @@ const root = [
 function App() {
   return(
   <div className="page">
-    <div className="location">path</div>
-    <hr/>
-    <div className="system">
-      <FileSystem folder={root}/>
-    </div>
+    <FileSystem folder={root}/>
   </div>
   )
 }
