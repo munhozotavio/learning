@@ -44,3 +44,29 @@ console.log(Counter.START);
 console.log(Counter.MIDDLE);
 console.log(Counter.END);
 
+// ------------------------- UNKNOW ------------------------
+
+let apiResult:unknown = 1;
+let anyResult:any = 2;
+
+function fakeApiCall():string | number{
+  if (Math.random() > 0.5) return "legal";
+  return 404;
+}
+
+apiResult = fakeApiCall();
+
+console.log('---------');
+console.log(apiResult);
+
+let correctNumber:number = anyResult; // it works
+// let correctNumber:number = apiResult; // error
+
+
+
+// ------------------------ VOID ---------------------
+function noReturnFunction():void {
+  console.log("I don't return");
+  //return;
+  return;
+}
