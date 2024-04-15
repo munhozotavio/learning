@@ -90,3 +90,36 @@ calculator = {
 }
 
 console.log(calculator.sum(1,2))
+
+// ------------------------------------------
+
+interface ICategory {
+  name: string;
+  id: number;
+  parent?: ICategory;
+}
+
+const frontEnd: ICategory = {
+  name: "Front-end",
+  id: 0
+}
+
+const backend: ICategory = {
+  name: "Back-end",
+  id: 1
+}
+
+interface IMenu {
+  options: ICategory[];
+}
+
+const menu: IMenu = {
+  options: [frontEnd, backend]
+}
+
+interface IArray { /// Why?
+  [idx: number]: string;
+}
+
+let normalarray: IArray = ["a", "b", "c"];
+
