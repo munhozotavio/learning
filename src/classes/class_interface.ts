@@ -20,8 +20,8 @@ abstract class Notify implements INotify {
 
 
 class EmailNotification extends Notify implements IEmailN {
-  private name: string;
-  private provider: string;
+  name: string;
+  provider: string;
 
   constructor(name: string, provider: string) {
     super()

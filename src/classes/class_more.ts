@@ -17,14 +17,10 @@ console.log(permission1.name);
 
 // --------------------------------------- STATIC
 
-interface IDatabase {
-  ip: string;
-  user: string;
-  password: string;
-  type: string;
-}
+import { IDatabase } from "../interfaces/Database";
 
-class Database {
+//export = class Database { node
+export class Database {
 
   static LOCAL = "127.0.0.1";
   static TYPE_MYSQL = `mysql`;
@@ -37,11 +33,16 @@ class Database {
     private type: string
   ) {}
 
+  get getIp(){
+    return this.ip;
+  }
+
   static factory(params: IDatabase) {
     if (![Database.TYPE_MYSQL, Database.TYPE_POSTGRES].includes(params.type)) return ("Invalid type");
 
     return new Database(params.ip, params.user, params.password, params.type);
   }
+
 }
 
 

@@ -1,4 +1,4 @@
-function sendMail(address:string, message:string = "No subject"):void {
+export default function sendMail(address:string, message:string = "No subject"):void {
   console.log(`Sending mail to ${address} with message: ${message}`);
 }
 
