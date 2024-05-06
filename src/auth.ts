@@ -8,4 +8,4 @@ const user = newUser.returnUser({name: "Jhon", id: 1});
 
 console.log(user);
 
-
+// 
