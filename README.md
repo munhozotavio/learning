@@ -1,4 +1,2 @@
 # learning
-An repository to learn react
-
-Each branch is a different challenge solved or a new technique learned
+This branch purpose is to learn about prefix and suffix product array
