@@ -5,6 +5,7 @@
     "rootDir": "src",
     "outDir": "dist",
     "sourceMap": true,
-    "removeComments": true
+    "removeComments": true,
+    "experimentalDecorators": true
   }
 }
