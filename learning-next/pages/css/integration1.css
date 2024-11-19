@@ -1,0 +1,14 @@
+/* Global css */
+/* Can only import to _app.tsx */
+
+.integration1 .red {
+  color: #f30;
+}
+
+.integration1 .blue {
+  color: #03f;
+}
+
+.integration1 .green {
+  color: #3f0;
+}
