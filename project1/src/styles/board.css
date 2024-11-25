@@ -1,0 +1,15 @@
+.square {
+  height: 50px;
+  width: 50px;
+}
+
+.board {
+  height: fit-content;
+  width: fit-content;
+  border: 1px solid black;
+}
+
+.line {
+  display: flex;
+
+}
